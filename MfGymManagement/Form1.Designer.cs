@@ -47,7 +47,7 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.gbFeesDetails = new System.Windows.Forms.GroupBox();
             this.txtFeesAmount = new System.Windows.Forms.TextBox();
             this.txtReceiptNo = new System.Windows.Forms.TextBox();
             this.rbYearly = new System.Windows.Forms.RadioButton();
@@ -62,7 +62,7 @@
             this.btnBrowsePhoto = new System.Windows.Forms.Button();
             this.picMemberPhoto = new System.Windows.Forms.PictureBox();
             this.btnNew = new System.Windows.Forms.Button();
-            this.btnSave = new System.Windows.Forms.Button();
+            this.btnSaveOrUpdate = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.chkPersonalTrainer = new System.Windows.Forms.CheckBox();
             this.chkCardio = new System.Windows.Forms.CheckBox();
@@ -73,7 +73,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.btnViewAll = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.gbFeesDetails.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picMemberPhoto)).BeginInit();
             this.SuspendLayout();
@@ -260,23 +260,23 @@
             this.label1.TabIndex = 26;
             this.label1.Text = "Name\r\n";
             // 
-            // groupBox2
+            // gbFeesDetails
             // 
-            this.groupBox2.Controls.Add(this.txtFeesAmount);
-            this.groupBox2.Controls.Add(this.txtReceiptNo);
-            this.groupBox2.Controls.Add(this.rbYearly);
-            this.groupBox2.Controls.Add(this.rbHalfYearly);
-            this.groupBox2.Controls.Add(this.rbQuarterly);
-            this.groupBox2.Controls.Add(this.rbMonthly);
-            this.groupBox2.Controls.Add(this.label25);
-            this.groupBox2.Controls.Add(this.label24);
-            this.groupBox2.Controls.Add(this.label23);
-            this.groupBox2.Controls.Add(this.label18);
-            this.groupBox2.Location = new System.Drawing.Point(574, 305);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(547, 203);
-            this.groupBox2.TabIndex = 26;
-            this.groupBox2.TabStop = false;
+            this.gbFeesDetails.Controls.Add(this.txtFeesAmount);
+            this.gbFeesDetails.Controls.Add(this.txtReceiptNo);
+            this.gbFeesDetails.Controls.Add(this.rbYearly);
+            this.gbFeesDetails.Controls.Add(this.rbHalfYearly);
+            this.gbFeesDetails.Controls.Add(this.rbQuarterly);
+            this.gbFeesDetails.Controls.Add(this.rbMonthly);
+            this.gbFeesDetails.Controls.Add(this.label25);
+            this.gbFeesDetails.Controls.Add(this.label24);
+            this.gbFeesDetails.Controls.Add(this.label23);
+            this.gbFeesDetails.Controls.Add(this.label18);
+            this.gbFeesDetails.Location = new System.Drawing.Point(574, 305);
+            this.gbFeesDetails.Name = "gbFeesDetails";
+            this.gbFeesDetails.Size = new System.Drawing.Size(547, 203);
+            this.gbFeesDetails.TabIndex = 26;
+            this.gbFeesDetails.TabStop = false;
             // 
             // txtFeesAmount
             // 
@@ -414,15 +414,15 @@
             this.btnNew.UseVisualStyleBackColor = true;
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
             // 
-            // btnSave
+            // btnSaveOrUpdate
             // 
-            this.btnSave.Location = new System.Drawing.Point(497, 583);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(109, 34);
-            this.btnSave.TabIndex = 55;
-            this.btnSave.Text = "Save";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            this.btnSaveOrUpdate.Location = new System.Drawing.Point(497, 583);
+            this.btnSaveOrUpdate.Name = "btnSaveOrUpdate";
+            this.btnSaveOrUpdate.Size = new System.Drawing.Size(109, 34);
+            this.btnSaveOrUpdate.TabIndex = 55;
+            this.btnSaveOrUpdate.Text = "Save";
+            this.btnSaveOrUpdate.UseVisualStyleBackColor = true;
+            this.btnSaveOrUpdate.Click += new System.EventHandler(this.btnSaveOrUpdate_Click);
             // 
             // btnExit
             // 
@@ -432,6 +432,7 @@
             this.btnExit.TabIndex = 56;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click_1);
             // 
             // chkPersonalTrainer
             // 
@@ -527,17 +528,17 @@
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.btnExit);
-            this.Controls.Add(this.btnSave);
+            this.Controls.Add(this.btnSaveOrUpdate);
             this.Controls.Add(this.btnNew);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.gbFeesDetails);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
             this.Text = "Form1";
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.gbFeesDetails.ResumeLayout(false);
+            this.gbFeesDetails.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picMemberPhoto)).EndInit();
             this.ResumeLayout(false);
@@ -557,7 +558,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox gbFeesDetails;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label23;
@@ -581,7 +582,7 @@
         private System.Windows.Forms.TextBox txtFeesAmount;
         private System.Windows.Forms.TextBox txtReceiptNo;
         private System.Windows.Forms.Button btnNew;
-        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.Button btnSaveOrUpdate;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.CheckBox chkPersonalTrainer;
         private System.Windows.Forms.CheckBox chkCardio;
