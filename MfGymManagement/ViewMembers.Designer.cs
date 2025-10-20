@@ -36,6 +36,9 @@
             this.picSelectedMember = new System.Windows.Forms.PictureBox();
             this.btnShowAll = new System.Windows.Forms.Button();
             this.lblHint = new System.Windows.Forms.Label();
+            this.lblDueDate = new System.Windows.Forms.Label();
+            this.lblDaysRemaining = new System.Windows.Forms.Label();
+            this.btnEditMember = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMembers)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picSelectedMember)).BeginInit();
             this.SuspendLayout();
@@ -126,11 +129,44 @@
             this.lblHint.TabIndex = 7;
             this.lblHint.Text = "To View/Update Payments: Double-Click on a Member";
             // 
+            // lblDueDate
+            // 
+            this.lblDueDate.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDueDate.Location = new System.Drawing.Point(672, 323);
+            this.lblDueDate.Name = "lblDueDate";
+            this.lblDueDate.Size = new System.Drawing.Size(255, 23);
+            this.lblDueDate.TabIndex = 8;
+            this.lblDueDate.Text = "Next Due Date : ";
+            // 
+            // lblDaysRemaining
+            // 
+            this.lblDaysRemaining.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblDaysRemaining.Location = new System.Drawing.Point(675, 383);
+            this.lblDaysRemaining.Name = "lblDaysRemaining";
+            this.lblDaysRemaining.Size = new System.Drawing.Size(269, 23);
+            this.lblDaysRemaining.TabIndex = 9;
+            this.lblDaysRemaining.Text = "Status : ";
+            // 
+            // btnEditMember
+            // 
+            this.btnEditMember.BackColor = System.Drawing.SystemColors.HotTrack;
+            this.btnEditMember.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditMember.Location = new System.Drawing.Point(565, 85);
+            this.btnEditMember.Name = "btnEditMember";
+            this.btnEditMember.Size = new System.Drawing.Size(75, 28);
+            this.btnEditMember.TabIndex = 10;
+            this.btnEditMember.Text = "Edit";
+            this.btnEditMember.UseVisualStyleBackColor = false;
+            this.btnEditMember.Click += new System.EventHandler(this.btnEditMember_Click);
+            // 
             // ViewMembers
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1157, 633);
+            this.Controls.Add(this.btnEditMember);
+            this.Controls.Add(this.lblDaysRemaining);
+            this.Controls.Add(this.lblDueDate);
             this.Controls.Add(this.lblHint);
             this.Controls.Add(this.btnShowAll);
             this.Controls.Add(this.picSelectedMember);
@@ -159,5 +195,8 @@
         private System.Windows.Forms.PictureBox picSelectedMember;
         private System.Windows.Forms.Button btnShowAll;
         private System.Windows.Forms.Label lblHint;
+        private System.Windows.Forms.Label lblDueDate;
+        private System.Windows.Forms.Label lblDaysRemaining;
+        private System.Windows.Forms.Button btnEditMember;
     }
 }
