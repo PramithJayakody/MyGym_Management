@@ -140,9 +140,11 @@
             // 
             // txtNewReceiptNo
             // 
+            this.txtNewReceiptNo.BackColor = System.Drawing.SystemColors.ControlLight;
             this.txtNewReceiptNo.Location = new System.Drawing.Point(107, 35);
             this.txtNewReceiptNo.Name = "txtNewReceiptNo";
-            this.txtNewReceiptNo.Size = new System.Drawing.Size(121, 20);
+            this.txtNewReceiptNo.ReadOnly = true;
+            this.txtNewReceiptNo.Size = new System.Drawing.Size(185, 20);
             this.txtNewReceiptNo.TabIndex = 1;
             // 
             // label2
