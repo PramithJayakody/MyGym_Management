@@ -24,6 +24,9 @@ namespace MfGymManagement // <-- ඔයාගෙ project එකේ නම
             InitializeComponent();
             InitializeDatabase();
             LoadNextMemberId();
+
+            txtReceiptNo.ReadOnly = true;
+            txtReceiptNo.Text = "(Will be generated after save)";
         }
 
         // 2. Member කෙනෙක්ව Edit කරන්න පාවිච්චි කරන අලුත් Constructor එක
@@ -222,11 +225,11 @@ namespace MfGymManagement // <-- ඔයාගෙ project එකේ නම
                    
 
                     // Fees Details
-                    string receiptNo = txtReceiptNo.Text;
+                    
                     double feesAmount = 0;
                     double.TryParse(txtFeesAmount.Text, out feesAmount);
 
-                    if (feesAmount > 0 || !string.IsNullOrWhiteSpace(receiptNo))
+                    if (feesAmount > 0 || !string.IsNullOrWhiteSpace(txtReceiptNo.Text))
                     {
                         string feesMode = "";
                         if (rbMonthly.Checked) feesMode = "Monthly";
@@ -234,18 +237,27 @@ namespace MfGymManagement // <-- ඔයාගෙ project එකේ නම
                         else if (rbHalfYearly.Checked) feesMode = "Half Yearly";
                         else if (rbYearly.Checked) feesMode = "Yearly";
 
-                        string sqlPaymentInsert = @"INSERT INTO Payments (MemberID, ReceiptNo, PaymentDate, FeesMode, Amount) 
-                                                    VALUES (@MemberID, @ReceiptNo, @PaymentDate, @FeesMode, @Amount)";
+                        string sqlPaymentInsert = @"INSERT INTO Payments (MemberID, PaymentDate, FeesMode, Amount) 
+                                                VALUES (@MemberID, @PaymentDate, @FeesMode, @Amount)";
                         SQLiteCommand cmdPayment = new SQLiteCommand(sqlPaymentInsert, dbConnection);
                         cmdPayment.Parameters.AddWithValue("@MemberID", lastInsertedMemberId);
-                        cmdPayment.Parameters.AddWithValue("@ReceiptNo", receiptNo);
+                        
                         cmdPayment.Parameters.AddWithValue("@PaymentDate", admissionDate);
                         cmdPayment.Parameters.AddWithValue("@FeesMode", feesMode);
                         cmdPayment.Parameters.AddWithValue("@Amount", feesAmount);
                         cmdPayment.ExecuteNonQuery();
+                        long lastPaymentId = dbConnection.LastInsertRowId;
+
+                        // --- මේ Message එක වෙනස් කරන්න ---
+                        MessageBox.Show($"Member saved successfully!\nNew Member ID: {lastInsertedMemberId}\nReceipt No: {lastPaymentId}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
 
-                    MessageBox.Show($"Member saved successfully!\nNew Member ID is: {lastInsertedMemberId}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    else
+                    {
+                        // Payment එකක් නැතුව save කරොත්
+                        MessageBox.Show($"Member saved successfully!\nNew Member ID is: {lastInsertedMemberId}", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+
                     ClearForm();
                 }
             }
@@ -347,7 +359,7 @@ namespace MfGymManagement // <-- ඔයාගෙ project එකේ නම
             txtHeight.Text = "";
             txtWeight.Text = "";
             txtContactNo.Text = "";
-            txtReceiptNo.Text = "";
+            txtReceiptNo.Text = "(Will be generated after save)";
             txtFeesAmount.Text = "";
             dtpBirthDate.Value = DateTime.Now;
             dtpAdmissionDate.Value = DateTime.Now;

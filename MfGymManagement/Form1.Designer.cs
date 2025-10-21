@@ -296,7 +296,7 @@
             this.gbFeesDetails.Controls.Add(this.label18);
             this.gbFeesDetails.Location = new System.Drawing.Point(574, 305);
             this.gbFeesDetails.Name = "gbFeesDetails";
-            this.gbFeesDetails.Size = new System.Drawing.Size(547, 203);
+            this.gbFeesDetails.Size = new System.Drawing.Size(665, 203);
             this.gbFeesDetails.TabIndex = 26;
             this.gbFeesDetails.TabStop = false;
             // 
@@ -313,7 +313,7 @@
             this.txtReceiptNo.Location = new System.Drawing.Point(378, 96);
             this.txtReceiptNo.Name = "txtReceiptNo";
             this.txtReceiptNo.ReadOnly = true;
-            this.txtReceiptNo.Size = new System.Drawing.Size(100, 20);
+            this.txtReceiptNo.Size = new System.Drawing.Size(281, 20);
             this.txtReceiptNo.TabIndex = 38;
             // 
             // rbYearly
